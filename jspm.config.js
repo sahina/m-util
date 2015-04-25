@@ -18,6 +18,7 @@ System.config({
     "babel": "npm:babel-core@5.1.13",
     "babel-runtime": "npm:babel-runtime@5.1.13",
     "core-js": "npm:core-js@0.8.4",
+    "fians/Waves": "github:fians/Waves@0.7.0",
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
     },
