@@ -1,0 +1,30 @@
+{
+  "name": "m-util",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sahina/m-util",
+  "authors": [
+    "Altug Sahin <altug@aecoffice.com>"
+  ],
+  "description": "Utility CSS classes and JS files based on Google material design specs",
+  "main": [
+    "dist/m-util.css",
+    "dist/m-util.js"
+  ],
+  "keywords": [
+    "Material",
+    "CSS",
+    "SCSS",
+    "SASS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    
+  }
+}

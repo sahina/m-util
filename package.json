@@ -1,0 +1,40 @@
+{
+  "name": "m-util",
+  "version": "0.0.1",
+  "description": "Utility CSS classes and JS files based on Google material design specs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahina/m-util.git"
+  },
+  "keywords": [
+    "css",
+    "material",
+    "sass",
+    "scss"
+  ],
+  "author": "Altug Sahin <altug@aecoffice.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahina/m-util/issues"
+  },
+  "homepage": "https://github.com/sahina/m-util",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-sass": "^1.3.2",
+    "jspm": "^0.15.4",
+    "run-sequence": "^1.1.0"
+  },
+  "jspm": {
+    "directories": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.11",
+      "babel-runtime": "npm:babel-runtime@^5.1.11",
+      "core-js": "npm:core-js@^0.8.4"
+    }
+  }
+}
