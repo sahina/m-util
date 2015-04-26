@@ -24,16 +24,19 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('scripts', function () {
+  return gulp.src('lib/js/**/*.js');
+});
+
 gulp.task('test', function (cb) {
   runSequence(
-    ['clean'], ['font', 'scss', 'test-assets', 'bundle', 'watch-test'],
+    ['clean'], ['font', 'scss', 'test-assets', 'watch-test'],
     cb
   );
 });
 
 gulp.task('watch', function () {
   gulp.watch('lib/scss/**/*.scss', ['scss']);
-  gulp.watch('lib/js/**/*.js', ['bundle']);
 });
 
 gulp.task('watch-test', function () {
@@ -41,33 +44,12 @@ gulp.task('watch-test', function () {
   gulp.watch(['test/**', 'index.html'], ['test-assets']);
 });
 
-gulp.task('bundle', function (cb) {
-  var Builder = require('systemjs-builder');
-  var builder = new Builder({
-    sourceMaps: true,
-    transpiler: 'babel'
-  });
-
-  builder.loadConfig('./jspm.config.js')
-    .then(function () {
-
-      builder.config({baseURL: 'file:' + process.cwd()});
-      builder.build('lib/js/bootstrap', 'dist/bundle.js')
-        .then(function () {
-          return cb();
-        })
-        .catch(function (ex) {
-          console.log(ex);
-          cb(new Error(ex));
-        });
-    });
-});
-
 gulp.task('build', function (cb) {
   runSequence(
-    ['clean'], ['font', 'scss', 'bundle', 'watch'],
+    ['clean'], ['font', 'scss'],
     cb
   );
 });
 
+gulp.task('serve', ['build', 'watch']);
 gulp.task('default', ['build']);

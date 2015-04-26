@@ -25,6 +25,6 @@
     "tests"
   ],
   "dependencies": {
-    
+    "waves": "~0.7.0"
   }
 }

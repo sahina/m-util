@@ -1,5 +1,9 @@
 /* style.css - not part of distribution, only for test support */
 
 html {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  padding: 20px;
 }
