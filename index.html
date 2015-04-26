@@ -1,13 +1,13 @@
 <!doctype html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
-    <title>Test page for m-util</title>
+  <title>Test page for m-util</title>
 
-    <link rel="stylesheet" href="dist/m-util.css"/>
-    <link rel="stylesheet" href="dist/style.css"/>
+  <link rel="stylesheet" href="dist/m-util.css"/>
+  <link rel="stylesheet" href="dist/style.css"/>
 </head>
 <body>
 <h1>m-util</h1>
@@ -15,13 +15,18 @@
 <h2>Waves</h2>
 
 <section>
-    <button class="btn">Click me to show waves</button>
+  <button class="btn">Click me to show waves</button>
 </section>
 
-<script src="jspm_packages/system.js"></script>
-<!--<script src="jspm.config.js"></script>-->
+<script src="lib/vendor/jquery/dist/jquery.js"></script>
+<script src="dist/m-util.js"></script>
+
 <script>
-    System.import('dist/bundle');
+  $(function () {
+    Waves.attach('.btn');
+    Waves.init();
+  });
 </script>
+
 </body>
 </html>

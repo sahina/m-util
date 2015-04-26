@@ -26,5 +26,8 @@
   ],
   "dependencies": {
     "waves": "~0.7.0"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.3"
   }
 }

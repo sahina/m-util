@@ -25,20 +25,15 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('scripts', function () {
-  var vendor = [
-    'lib/vendor/waves/src/js/waves.js'
-  ];
-
-  return gulp.src(vendor)
+gulp.task('lib-waves', function () {
+  return gulp.src('lib/vendor/waves/src/js/waves.js')
     .pipe(concat('m-util.js'))
     .pipe(gulp.dest('dist'));
-
 });
 
 gulp.task('test', function (cb) {
   runSequence(
-    ['clean'], ['font', 'scss', 'scripts', 'test-assets', 'watch-test'],
+    ['clean'], ['font', 'scss', 'lib-waves', 'test-assets', 'watch-test'],
     cb
   );
 });
@@ -53,8 +48,14 @@ gulp.task('watch-test', function () {
 });
 
 gulp.task('build', function (cb) {
+  var tasks = [
+    'font',
+    'scss',
+    'lib-waves'
+  ];
+
   runSequence(
-    ['clean'], ['font', 'scss', 'scripts'],
+    ['clean'], tasks,
     cb
   );
 });
