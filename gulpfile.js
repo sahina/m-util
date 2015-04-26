@@ -38,7 +38,7 @@ gulp.task('scripts', function () {
 
 gulp.task('test', function (cb) {
   runSequence(
-    ['clean'], ['font', 'scss', 'test-assets', 'watch-test'],
+    ['clean'], ['font', 'scss', 'scripts', 'test-assets', 'watch-test'],
     cb
   );
 });
@@ -54,7 +54,7 @@ gulp.task('watch-test', function () {
 
 gulp.task('build', function (cb) {
   runSequence(
-    ['clean'], ['font', 'scss'],
+    ['clean'], ['font', 'scss', 'scripts'],
     cb
   );
 });
