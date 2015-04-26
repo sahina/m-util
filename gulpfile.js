@@ -1,6 +1,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 var del = require('del');
 var runSequence = require('run-sequence');
 
@@ -25,7 +26,14 @@ gulp.task('scss', function () {
 });
 
 gulp.task('scripts', function () {
-  return gulp.src('lib/js/**/*.js');
+  var vendor = [
+    'lib/vendor/waves/src/js/waves.js'
+  ];
+
+  return gulp.src(vendor)
+    .pipe(concat('m-util.js'))
+    .pipe(gulp.dest('dist'));
+
 });
 
 gulp.task('test', function (cb) {
